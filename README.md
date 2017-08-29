@@ -1,0 +1,2 @@
+# Code-Contest-Calendar
+In today’s growing coding cultures, coding sites have really taken over gaming sites. Each coding competition organized by each website has its own unique mark. Considering the huge number of websites, it has become really hard for the coders to keep track of the various contests and the contests which are apt to their level of skills in coding. In order to overcome the current problem, the idea of code contest calendar is strong. 
