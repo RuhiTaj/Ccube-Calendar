@@ -1,0 +1,29 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+
+<ul>
+    {%  for the_date in all_dates %}
+        <li><a href="/data/{{ the_date.year }}{{ the_date.month}}{{the_date.day }}/">{{ the_date.day }}{{ "-" }}{{ the_date.month }}{{ "-" }}{{ the_date.year }}</a></li>
+
+        {% for the_competition in all_competitions %}
+            {% if the_date.date < the_competition.startDate %}
+            {% else %}
+                {% if the_date.date <= the_competition.endDate  %}
+                    <p style="text-indent: 5em;">{{ the_competition.websiteName }}{{ " _____ " }}{{ the_competition.startDate }}{{ " _____ "}} {{ the_competition.endDate }}{{ "  ::  " }}<a href="{{ the_competition.codingLink }}/">{{ the_competition.compName }}</a></p>
+                {% elif the_date.date == the_competition.startDate %}
+                    <p style="text-indent: 5em;">{{ the_competition.websiteName }}{{ " _____ " }}{{ the_competition.startDate }}{{ " _____ "}} {{ the_competition.endDate }}{{ "  ::  " }}<a href="{{ the_competition.codingLink }}/">{{ the_competition.compName }}</a></p>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{#        <li><a href="' + url + '">' + the_date.day + "-" + the_date.month + "-" + the_date.year + </a>#}
+</ul>
